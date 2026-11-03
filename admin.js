@@ -1,7 +1,7 @@
 import { configured, db, auth, storage, ownerEmail } from "./firebase-init.js";
 import { collection, addDoc, updateDoc, deleteDoc, doc, onSnapshot, query, orderBy, writeBatch, serverTimestamp }
   from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-import { signInWithEmailAndPassword, signOut, onAuthStateChanged }
+import { signInWithEmailAndPassword, signOu, onAuthStateChanged, sendEmailVerification }
   from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { ref, uploadBytes, getDownloadURL, deleteObject }
   from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
@@ -26,9 +26,10 @@ if (configured) {
     if (unsub) { unsub(); unsub = null; }
     const isOwner = user && user.email === ownerEmail && user.emailVerified;
     if (user && !isOwner) {
-      $("loginErr").textContent = user.email === ownerEmail
-        ? "Verify your email address in Firebase before using the manager."
-        : "This account is not allowed to manage products.";
+            if (user.email === ownerEmail) {
+        sendEmailVerification(user).catch(() => {});
+        $("loginErr").textContent = "Your email is not verified yet. We sent a verification link to " + user.email + ". Open it, then sign in again.";
+      } else $("loginErr").textContent = "This account is not allowed to manage products.";
       signOut(auth); return;
     }
     $("loginBox").hidden = !!isOwner;
