@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop | Monique Collections</title>
+<meta name="description" content="Monique Collections sells kitchen appliances and home appliances. Call or WhatsApp 0714489239.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="index.html">Monique Collections</a>
+  <nav><a href="index.html">Home</a><a href="shop.html" class=active>Shop</a><a href="contact.html">Contact</a><a class="call" href="tel:+254714489239">Call 0714 489 239</a></nav>
+</header>
+<main>
+<section>
+  <h1>Shop</h1>
+  <details class="owner-access">
+    <summary>Owner product manager</summary>
+    <p id="ownerStatus" class="owner-status" role="status" aria-live="polite">Checking product publishing setup...</p>
+    <form id="ownerLogin" novalidate>
+      <label for="ownerEmail">Owner email</label>
+      <input id="ownerEmail" type="email" autocomplete="username" required>
+      <label for="ownerPassword">Password</label>
+      <input id="ownerPassword" type="password" autocomplete="current-password" required>
+      <button class="btn" type="submit">Sign in</button>
+    </form>
+    <div id="ownerTools" hidden>
+        <div id="starterImport" class="starter-import" hidden>
+          <p>Move the existing starter products into the online catalog so you can mark them sold or remove them.</p>
+          <button id="importStarterProducts" class="btn alt" type="button">Import starter products</button>
+        </div>
+      <div class="owner-tools-heading">
+        <h2>Add a product</h2>
+        <button id="ownerLogout" class="btn alt" type="button" aria-label="Sign out">Sign out</button>
+      </div>
+      <form id="productForm">
+        <label for="productName">Product name</label>
+        <input id="productName" type="text" maxlength="80" required>
+        <label for="productCategory">Category</label>
+        <select id="productCategory" required></select>
+        <label for="productPrice">Price (KES)</label>
+        <input id="productPrice" type="number" min="1" step="1" inputmode="numeric" required>
+        <label for="productDescription">Description</label>
+        <textarea id="productDescription" rows="3" maxlength="500" required></textarea>
+        <label for="productPhoto">Product photo</label>
+        <input id="productPhoto" type="file" accept="image/*" required>
+        <label class="stock-toggle" for="productInStock">
+          <input id="productInStock" type="checkbox" checked>
+          In stock
+        </label>
+        <button class="btn" type="submit">Publish product</button>
+      </form>
+      <h2 class="manage-products-title">Published products</h2>
+      <div id="ownerProductList" class="owner-product-list"></div>
+    </div>
+  </details>
+  <div class="filters">
+    <input id="search" type="search" placeholder="Search products, e.g. blender" aria-label="Search products">
+    <div id="filterBtns" class="chips"></div>
+  </div>
+  <p id="count" aria-live="polite"></p>
+  <div class="grid" id="products"></div>
+</section>
+</main>
+<footer>
+  <div>
+    <strong>Monique Collections</strong>
+    <p>Kitchen and home appliances.</p>
+  </div>
+  <div>
+    <p>Phone: <a href="tel:+254714489239">0714 489 239</a></p>
+    <p><a href="https://wa.me/254714489239">Chat on WhatsApp</a></p>
+  </div>
+  <p class="copy">&copy; <span id="year"></span> Monique Collections</p>
+</footer>
+
+<script src="products.js"></script>
+<script src="script.js"></script>
+<script type="module" src="shop-admin.js"></script>
+</body>
+</html>

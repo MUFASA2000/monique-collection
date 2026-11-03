@@ -1,0 +1,20 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function isOwner() {
+      return request.auth != null
+        && request.auth.token.email == 'dannnymuasa@gmail.com'
+        && request.auth.token.email_verified == true;
+    }
+
+    match /products/{ownerUid}/{fileName} {
+      allow read: if true;
+      allow create: if isOwner()
+        && request.auth.uid == ownerUid
+        && request.resource.size < 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+      allow delete: if isOwner() && request.auth.uid == ownerUid;
+      allow update: if false;
+    }
+  }
+}

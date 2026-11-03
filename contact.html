@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Monique Collections</title>
+<meta name="description" content="Monique Collections sells kitchen appliances and home appliances. Call or WhatsApp 0714489239.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <a class="brand" href="index.html">Monique Collections</a>
+  <nav><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="contact.html" class=active>Contact</a><a class="call" href="tel:+254714489239">Call 0714 489 239</a></nav>
+</header>
+<main>
+<section>
+  <h1>Contact us</h1>
+  <p>The quickest way to reach us is by phone or WhatsApp.</p>
+  <div class="contact-cards">
+    <a class="cc" href="tel:+254714489239"><strong>Call us</strong><span>0714 489 239</span></a>
+    <a class="cc" href="https://wa.me/254714489239"><strong>WhatsApp</strong><span>0714 489 239</span></a>
+  </div>
+</section>
+<section>
+  <h2>Send an enquiry</h2>
+  <p>Fill in the form and it opens WhatsApp with your message ready to send.</p>
+  <form id="enquiry" novalidate>
+    <label for="name">Your name</label><input id="name" type="text"><span class="err" id="nameErr"></span>
+    <label for="item">Product you are asking about</label><input id="item" type="text" placeholder="e.g. 5L air fryer"><span class="err" id="itemErr"></span>
+    <label for="msg">Message</label><textarea id="msg" rows="4" placeholder="Quantity, delivery location, questions"></textarea><span class="err" id="msgErr"></span>
+    <button class="btn" type="submit">Send on WhatsApp</button>
+  </form>
+</section>
+</main>
+<footer>
+  <div>
+    <strong>Monique Collections</strong>
+    <p>Kitchen and home appliances.</p>
+  </div>
+  <div>
+    <p>Phone: <a href="tel:+254714489239">0714 489 239</a></p>
+    <p><a href="https://wa.me/254714489239">Chat on WhatsApp</a></p>
+  </div>
+  <p class="copy">&copy; <span id="year"></span> Monique Collections</p>
+</footer>
+
+<script src="products.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
