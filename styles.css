@@ -38,25 +38,7 @@ p{margin-bottom:10px;max-width:68ch}
 .stock{font-size:.88rem;font-weight:600}
 .stock.in{color:#1e7a46}.stock.out{color:#b3261e}
 .filters{margin-bottom:12px}
-input[type=search],input[type=text],input[type=email],input[type=password],input[type=number],input[type=file],textarea,select{width:100%;padding:11px;border:1px solid #c8bcc0;border-radius:6px;font:inherit;background:#fff}
-.owner-access{margin:0 0 24px;padding:14px 16px;border:1px solid var(--line);border-radius:6px;background:#fff}
-.owner-access summary{font-weight:700;color:var(--berry);cursor:pointer}
-.owner-status{margin:12px 0;font-size:.92rem}
-.owner-tools-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0 6px}
-.owner-tools-heading h2{margin:0}
-.stock-toggle{display:flex;align-items:center;gap:8px}
-.stock-toggle input{width:auto}
-.owner-access form .btn{margin-top:12px}
-.starter-import{margin:18px 0;padding:14px;background:var(--soft);border-radius:6px}
-.starter-import p{margin-bottom:8px}
-.manage-products-title{margin:28px 0 10px}
-.owner-product-list{display:grid;gap:10px}
-.owner-product-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border-top:1px solid var(--line)}
-.owner-product-name{font-weight:700}
-.owner-product-actions{display:flex;flex-wrap:wrap;gap:8px}
-.owner-product-actions button{padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);font:inherit;cursor:pointer}
-.owner-product-actions button:hover{border-color:var(--berry);color:var(--berry)}
-@media(max-width:600px){.owner-product-row{align-items:flex-start;flex-direction:column}}
+input[type=search],input[type=text],textarea{width:100%;padding:11px;border:1px solid #c8bcc0;border-radius:6px;font:inherit}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .chips button{padding:7px 14px;border:1px solid var(--line);background:#fff;border-radius:20px;font:inherit;cursor:pointer}
 .chips button:hover{border-color:var(--berry)}
@@ -76,3 +58,14 @@ footer a{color:#f3b6c6}
 .copy{width:100%;margin:0;font-size:.9rem;opacity:.8}
 @media(max-width:600px){h1{font-size:1.8rem}.hero{padding:30px 5%}nav a{padding:7px 10px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+/* Owner manager */
+.owner{border:1px solid var(--line);border-radius:10px;padding:14px 18px;background:#fff}
+.owner summary{cursor:pointer;font-weight:700;color:var(--berry)}
+.owner h3{margin:18px 0 8px}
+select,input[type=number],input[type=email],input[type=password],input[type=file]{width:100%;padding:11px;border:1px solid #c8bcc0;border-radius:6px;font:inherit;background:#fff}
+.check{display:flex;align-items:center;gap:8px;font-weight:400}.check input{width:auto}
+.note{min-height:1.4em;font-weight:600}
+.mgr-list{margin-top:10px}
+.mgr-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid var(--line)}
+.mgr-row span{flex:1 1 220px}
+.btn.danger{background:#b3261e}.btn.danger:hover{background:#8a1c16}

@@ -4,63 +4,55 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shop | Monique Collections</title>
-<meta name="description" content="Monique Collections sells kitchen appliances and home appliances. Call or WhatsApp 0714489239.">
+<meta name="description" content="Monique Collections sells kitchen appliances and home appliances. Call or WhatsApp 0793961544.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header>
   <a class="brand" href="index.html">Monique Collections</a>
-  <nav><a href="index.html">Home</a><a href="shop.html" class=active>Shop</a><a href="contact.html">Contact</a><a class="call" href="tel:+254714489239">Call 0714 489 239</a></nav>
+  <nav><a href="index.html">Home</a><a href="shop.html" class=active>Shop</a><a href="contact.html">Contact</a><a class="call" href="tel:+254793961544">Call 0793 961 544</a></nav>
 </header>
 <main>
 <section>
   <h1>Shop</h1>
-  <details class="owner-access">
-    <summary>Owner product manager</summary>
-    <p id="ownerStatus" class="owner-status" role="status" aria-live="polite">Checking product publishing setup...</p>
-    <form id="ownerLogin" novalidate>
-      <label for="ownerEmail">Owner email</label>
-      <input id="ownerEmail" type="email" autocomplete="username" required>
-      <label for="ownerPassword">Password</label>
-      <input id="ownerPassword" type="password" autocomplete="current-password" required>
-      <button class="btn" type="submit">Sign in</button>
-    </form>
-    <div id="ownerTools" hidden>
-        <div id="starterImport" class="starter-import" hidden>
-          <p>Move the existing starter products into the online catalog so you can mark them sold or remove them.</p>
-          <button id="importStarterProducts" class="btn alt" type="button">Import starter products</button>
-        </div>
-      <div class="owner-tools-heading">
-        <h2>Add a product</h2>
-        <button id="ownerLogout" class="btn alt" type="button" aria-label="Sign out">Sign out</button>
-      </div>
-      <form id="productForm">
-        <label for="productName">Product name</label>
-        <input id="productName" type="text" maxlength="80" required>
-        <label for="productCategory">Category</label>
-        <select id="productCategory" required></select>
-        <label for="productPrice">Price (KES)</label>
-        <input id="productPrice" type="number" min="1" step="1" inputmode="numeric" required>
-        <label for="productDescription">Description</label>
-        <textarea id="productDescription" rows="3" maxlength="500" required></textarea>
-        <label for="productPhoto">Product photo</label>
-        <input id="productPhoto" type="file" accept="image/*" required>
-        <label class="stock-toggle" for="productInStock">
-          <input id="productInStock" type="checkbox" checked>
-          In stock
-        </label>
-        <button class="btn" type="submit">Publish product</button>
-      </form>
-      <h2 class="manage-products-title">Published products</h2>
-      <div id="ownerProductList" class="owner-product-list"></div>
-    </div>
-  </details>
   <div class="filters">
     <input id="search" type="search" placeholder="Search products, e.g. blender" aria-label="Search products">
     <div id="filterBtns" class="chips"></div>
   </div>
   <p id="count" aria-live="polite"></p>
   <div class="grid" id="products"></div>
+</section>
+<section>
+  <details id="owner" class="owner" hidden>
+    <summary>Owner product manager</summary>
+    <div id="loginBox">
+      <p>Sign in to add, sell or remove products.</p>
+      <form id="loginForm" novalidate>
+        <label for="oemail">Email</label><input id="oemail" type="email" autocomplete="username">
+        <label for="opass">Password</label><input id="opass" type="password" autocomplete="current-password">
+        <span class="err" id="loginErr"></span>
+        <button class="btn" type="submit">Sign in</button>
+      </form>
+    </div>
+    <div id="manager" hidden>
+      <p><span id="who"></span> <button class="btn alt small" id="signOut" type="button">Sign out</button></p>
+      <p id="mgrStatus" aria-live="polite" class="note"></p>
+      <h3>Add a product</h3>
+      <form id="addForm" novalidate>
+        <label for="pname">Name</label><input id="pname" type="text">
+        <label for="pcat">Category</label><select id="pcat"></select>
+        <label for="pprice">Price (KES)</label><input id="pprice" type="number" min="0" inputmode="numeric">
+        <label for="pdesc">Description</label><textarea id="pdesc" rows="3"></textarea>
+        <label for="pphoto">Photo</label><input id="pphoto" type="file" accept="image/*">
+        <label class="check"><input id="pfeat" type="checkbox"> Show on the home page</label>
+        <span class="err" id="addErr"></span>
+        <button class="btn" type="submit" id="addBtn">Add product</button>
+      </form>
+      <h3>Your products</h3>
+      <button class="btn alt small" id="importBtn" type="button">Import starter products</button>
+      <div id="mgrList" class="mgr-list"></div>
+    </div>
+  </details>
 </section>
 </main>
 <footer>
@@ -69,14 +61,15 @@
     <p>Kitchen and home appliances.</p>
   </div>
   <div>
-    <p>Phone: <a href="tel:+254714489239">0714 489 239</a></p>
-    <p><a href="https://wa.me/254714489239">Chat on WhatsApp</a></p>
+    <p>Phone: <a href="tel:+254793961544">0793 961 544</a></p>
+    <p><a href="https://wa.me/254793961544">Chat on WhatsApp</a></p>
   </div>
   <p class="copy">&copy; <span id="year"></span> Monique Collections</p>
 </footer>
 
 <script src="products.js"></script>
 <script src="script.js"></script>
-<script type="module" src="shop-admin.js"></script>
+<script type="module" src="live.js"></script>
+<script type="module" src="admin.js"></script>
 </body>
 </html>

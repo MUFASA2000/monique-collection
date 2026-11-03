@@ -21,6 +21,3 @@ const PRODUCTS = [
   { name: "Standing Fan 18 inch", category: "Home care", price: 4800, icon: "🌀", inStock: true, featured: false, desc: "Three speeds with adjustable height and tilt." },
   { name: "Vacuum Cleaner 1600W", category: "Home care", price: 8900, icon: "🧹", inStock: true, featured: false, desc: "Bagless, with washable filter and attachments." }
 ];
-
-window.CATEGORIES = CATEGORIES;
-window.PRODUCTS = PRODUCTS;
